@@ -1,0 +1,10 @@
+<table>
+    <?php foreach ($this->gridPrint() as $key => $value) : ?>
+        <tr>
+            <td><?php echo $key ?></td>
+            <td><?php echo $value ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+<?php echo $this->getChildElement('hulk'); ?>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <modules>
+        <Ccc_Hulk>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ccc_Hulk>
+    </modules>
+</config>

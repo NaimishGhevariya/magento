@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_hulk_attribute_edit>
+        <reference name="left">
+            <block type="hulk/adminhtml_hulk_attribute_edit_tabs" name="hulk_edit_tabs"></block>
+        </reference>
+        <reference name="content">
+            <block type="hulk/adminhtml_hulk_attribute_edit" name="hulk_edit_content"></block>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="attribute_edit_js" template="hulk/attribute/js.phtml"></block>
+        </reference>
+    </adminhtml_hulk_attribute_edit>
+
+
+    <adminhtml_hulk_edit>
+        <update handle="editor" />
+        <reference name="content">
+            <block type="hulk/adminhtml_hulk_edit" name="hulk_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="hulk/adminhtml_hulk_edit_tabs" name="hulk_tabs"></block>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/catalog_product_edit_js" template="catalog/product/js.phtml" name="catalog_product_js"></block>
+            <block type="core/template" template="catalog/wysiwyg/js.phtml" />
+        </reference>
+    </adminhtml_hulk_edit>
+</layout>

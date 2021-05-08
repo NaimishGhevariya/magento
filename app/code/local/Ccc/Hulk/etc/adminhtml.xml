@@ -1,0 +1,55 @@
+<config>
+    <menu>
+        <hulk>
+            <title>Hulk</title>
+            <sort_order>104</sort_order>
+            <children>
+                <hulk>
+                    <title>Manage Hulk</title>
+                    <sort_order>100</sort_order>
+                    <action>*/hulk</action>
+                </hulk>
+
+                <hulk_attribute>
+                    <title>Manage Attribute</title>
+                    <sort_order>100</sort_order>
+                    <action>*/hulk_attribute</action>
+                </hulk_attribute>
+
+                <hulk_set>
+                    <title>Manage Attribute set</title>
+                    <sort_order>100</sort_order>
+                    <action>*/hulk_set</action>
+                </hulk_set>
+            </children>
+        </hulk>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <hulk translate="title">
+                        <title>Hulk</title>
+                        <sort_order>1000</sort_order>
+                        <children>
+                            <alert translate="title">
+                                <title>Manage Hulk</title>
+                            </alert>
+
+                            <alert translate="title">
+                                <title>Manage Attribute</title>
+                            </alert>
+
+                            <alert translate="title">
+                                <title>Manage Attribute set</title>
+                            </alert>
+                        </children>
+                    </hulk>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
