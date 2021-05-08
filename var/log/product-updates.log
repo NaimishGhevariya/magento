@@ -1,0 +1,31 @@
+2021-04-05T05:08:25+00:00 DEBUG (7): product 2 (2ndproduct) updated
+2021-04-05T05:16:56+00:00 DEBUG (7): product test attribute (product test attribute) updated
+2021-04-05T05:18:23+00:00 DEBUG (7): product test attribute (product test attribute) updated
+2021-04-05T10:57:56+00:00 DEBUG (7): product4 (this is 4th product) updated
+2021-04-06T04:11:15+00:00 DEBUG (7): product 5 grouped (product 5 grouped) updated
+2021-04-06T04:22:26+00:00 DEBUG (7): product 5 grouped (product 5 grouped) updated
+2021-04-06T04:34:07+00:00 DEBUG (7): product6 (product6) updated
+2021-04-06T04:43:29+00:00 DEBUG (7): product7 (product7) updated
+2021-04-06T04:57:07+00:00 DEBUG (7): product8 (product8) updated
+2021-04-06T10:19:08+00:00 DEBUG (7): product8 (product8) updated
+2021-04-06T10:20:36+00:00 DEBUG (7): product8 (product8) updated
+2021-04-06T10:21:27+00:00 DEBUG (7): product8 (product8) updated
+2021-04-07T10:42:43+00:00 DEBUG (7): product9 (product9) updated
+2021-04-07T10:45:00+00:00 DEBUG (7): product10 (product10) updated
+2021-04-22T07:30:15+00:00 DEBUG (7): product 5 grouped () updated
+2021-04-22T08:51:16+00:00 DEBUG (7): product1 (product1) updated
+2021-04-22T08:52:18+00:00 DEBUG (7): product1 (product1) updated
+2021-04-22T08:55:03+00:00 DEBUG (7): product 5 grouped (product 5 ) updated
+2021-04-22T08:55:53+00:00 DEBUG (7): product9 (product9) updated
+2021-04-22T08:56:46+00:00 DEBUG (7): product9 (product9) updated
+2021-04-22T08:58:14+00:00 DEBUG (7): product1 (product1) updated
+2021-04-22T09:05:26+00:00 DEBUG (7): product9 (product9) updated
+2021-04-22T09:06:08+00:00 DEBUG (7): product 5 grouped (product 5 grouped) updated
+2021-04-22T09:08:26+00:00 DEBUG (7): product7 (product7) updated
+2021-04-22T09:10:02+00:00 DEBUG (7): product8 (product8) updated
+2021-04-22T09:11:07+00:00 DEBUG (7): product10 (product10) updated
+2021-04-22T09:14:18+00:00 DEBUG (7): pr11 (pr11) updated
+2021-04-22T09:14:51+00:00 DEBUG (7): pr11 (pr11) updated
+2021-04-22T09:16:09+00:00 DEBUG (7): pr11 (pr11) updated
+2021-04-22T09:17:43+00:00 DEBUG (7): product8 (product8) updated
+2021-04-22T09:18:17+00:00 DEBUG (7): product8 (product8) updated
