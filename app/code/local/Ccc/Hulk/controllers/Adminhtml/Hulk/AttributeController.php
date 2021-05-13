@@ -4,6 +4,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
 {
 
     protected $_entityTypeId;
+    protected $_forcedFormKeyActions = [];
 
     const XML_PATH_ALLOWED_TAGS = 'system/catalog/frontend/allowed_html_tags_list';
 

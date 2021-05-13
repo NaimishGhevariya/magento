@@ -9,6 +9,8 @@ class Ccc_Hulk_Model_Resource_Eav_Attribute extends Mage_Eav_Model_Entity_Attrib
     const MODULE_NAME = 'Ccc_Hulk';
     const ENTITY = 'hulk_eav_attribute';
 
+    protected $_labels = [];
+
     protected function _construct()
     {
         $this->_init('hulk/attribute');
