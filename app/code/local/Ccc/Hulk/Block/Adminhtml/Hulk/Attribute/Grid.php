@@ -77,6 +77,27 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Attribute_Grid extends Mage_Eav_Block_Adminh
             'align' => 'center',
         ), 'is_filterable');
 
+        $this->addColumn(
+            'action',
+            array(
+                'header'   => Mage::helper('hulk')->__('Action'),
+                'width'    => '50px',
+                'type'     => 'action',
+                'getter'   => 'getId',
+                'actions'  => array(
+                    array(
+                        'caption' => Mage::helper('hulk')->__('Delete'),
+                        'url'     => array(
+                            'base' => '*/*/delete',
+                        ),
+                        'field'   => 'attribute_id',
+                    ),
+                ),
+                'filter'   => false,
+                'sortable' => false,
+            )
+        );
+
         return $this;
     }
 }

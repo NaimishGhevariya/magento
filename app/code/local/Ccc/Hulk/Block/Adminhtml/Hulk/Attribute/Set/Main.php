@@ -69,7 +69,7 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Attribute_Set_Main extends Mage_Adminhtml_Bl
 
         $deleteConfirmMessage = $this->jsQuoteEscape(Mage::helper('hulk')
             ->__('All products of this set will be deleted! Are you sure you want to delete this attribute set?'));
-        $deleteUrl = $this->getUrlSecure('*/*/delete', array('id' => $setId));
+        $deleteUrl = $this->getUrl('*/*/delete', array('id' => $setId));
         $this->setChild(
             'delete_button',
             $this->getLayout()->createBlock('adminhtml/widget_button')->setData(array(

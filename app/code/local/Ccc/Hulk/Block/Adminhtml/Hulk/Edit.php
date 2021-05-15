@@ -6,6 +6,7 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Edit extends Mage_Adminhtml_Block_Widget_For
     {
         $this->_blockGroup = 'hulk';
         $this->_controller = 'adminhtml_hulk';
+        $this->_headerText = 'Add Hulk';
         parent::__construct();
     }
 }

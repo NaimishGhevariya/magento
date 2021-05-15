@@ -4,24 +4,6 @@
             <version>0.1.1</version>
         </Ccc_Hulk>
     </modules>
-    <frontend>
-        <routers>
-            <ccc_hulk>
-                <use>standerd</use>
-                <args>
-                    <module>Ccc_Hulk</module>
-                    <frontName>hulk-app</frontName>
-                </args>
-            </ccc_hulk>
-        </routers>
-        <layout>
-            <updates>
-                <ccc_hulk>
-                    <file>hulk.xml</file>
-                </ccc_hulk>
-            </updates>
-        </layout>
-    </frontend>
     <admin>
         <routers>
             <adminhtml>

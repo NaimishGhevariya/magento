@@ -28,7 +28,7 @@ class Ccc_Hulk_Model_Hulk extends Mage_Core_Model_Abstract
         $resource = Mage::getSingleton('core/resource');
 
         $readConnection = $resource->getConnection('core_read');
-        $readConnection = $resource->getConnection('core_read');
+        // $readConnection = $resource->getConnection('core_read');
 
         $query = '
             SELECT * FROM ' .

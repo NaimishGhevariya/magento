@@ -181,7 +181,7 @@ $setup->addAttribute(Ccc_Hulk_Model_Resource_Hulk::ENTITY, 'email', array(
 $setup->addAttribute(Ccc_Hulk_Model_Resource_Hulk::ENTITY, 'phoneNo', array(
     'group'                      => 'General',
     'input'                      => 'text',
-    'type'                       => 'int',
+    'type'                       => 'varchar',
     'label'                      => 'phoneNo',
     'frontend_class'             => 'validate-digits',
     'backend'                    => '',

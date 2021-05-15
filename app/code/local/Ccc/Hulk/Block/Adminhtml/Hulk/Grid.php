@@ -10,7 +10,7 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Grid extends Mage_Adminhtml_Block_Widget_Gri
         $this->setDefaultSort('entity_id');
         $this->setDefaultDir('DESC');
         $this->setSaveParametersInSession(true);
-        $this->setUseAjax(true);
+        $this->setUseAjax(false);
         $this->setVarNameFilter('hulk_filter');
     }
 
@@ -86,6 +86,7 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Grid extends Mage_Adminhtml_Block_Widget_Gri
                 'header' => Mage::helper('hulk')->__('id'),
                 'width'  => '50px',
                 'index'  => 'id',
+
             )
         );
         $this->addColumn(
@@ -94,6 +95,7 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Grid extends Mage_Adminhtml_Block_Widget_Gri
                 'header' => Mage::helper('hulk')->__('First Name'),
                 'width'  => '50px',
                 'index'  => 'firstname',
+
             )
         );
 
@@ -103,6 +105,7 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Grid extends Mage_Adminhtml_Block_Widget_Gri
                 'header' => Mage::helper('hulk')->__('Last Name'),
                 'width'  => '50px',
                 'index'  => 'lastname',
+
             )
         );
 
@@ -112,6 +115,7 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Grid extends Mage_Adminhtml_Block_Widget_Gri
                 'header' => Mage::helper('hulk')->__('Email'),
                 'width'  => '50px',
                 'index'  => 'email',
+
             )
         );
 
@@ -121,6 +125,7 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Grid extends Mage_Adminhtml_Block_Widget_Gri
                 'header' => Mage::helper('hulk')->__('Phone Number'),
                 'width'  => '50px',
                 'index'  => 'phoneNo',
+
             )
         );
 
@@ -151,7 +156,7 @@ class Ccc_Hulk_Block_Adminhtml_Hulk_Grid extends Mage_Adminhtml_Block_Widget_Gri
 
     public function getGridUrl()
     {
-        return $this->getUrl('*/*/grid', array('_current' => true));
+        return $this->getUrl('*/*/index', array('_current' => true));
     }
 
     public function getRowUrl($row)

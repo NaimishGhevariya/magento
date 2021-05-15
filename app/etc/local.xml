@@ -28,7 +28,7 @@
 <config>
     <global>
         <install>
-            <date><![CDATA[Mon, 22 Mar 2021 16:35:56 +0000]]></date>
+            <date><![CDATA[Sat, 15 May 2021 13:21:55 +0000]]></date>
         </install>
         <crypt>
             <key><![CDATA[magento]]></key>

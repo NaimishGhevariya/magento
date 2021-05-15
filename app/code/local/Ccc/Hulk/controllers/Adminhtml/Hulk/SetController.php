@@ -2,6 +2,7 @@
 
 class Ccc_Hulk_Adminhtml_Hulk_setController extends Mage_Adminhtml_Controller_Action
 {
+    protected $_forcedFormKeyActions = [];
 
     protected function _setTypeId()
     {
@@ -69,7 +70,6 @@ class Ccc_Hulk_Adminhtml_Hulk_setController extends Mage_Adminhtml_Controller_Ac
         $this->_setTypeId();
         $attributeSet = Mage::getModel('eav/entity_attribute_set')
             ->load($this->getRequest()->getParam('id'));
-
         if (!$attributeSet->getId()) {
             $this->_redirect('*/*/index');
             return;
@@ -80,7 +80,7 @@ class Ccc_Hulk_Adminhtml_Hulk_setController extends Mage_Adminhtml_Controller_Ac
         Mage::register('current_attribute_set', $attributeSet);
 
         $this->loadLayout();
-        $this->_setActiveMenu('hulk');
+        $this->_setActiveMenu('Hulk');
 
         $this->getLayout()->getBlock('head')->setCanLoadExtJs(true);
 
@@ -189,6 +189,7 @@ class Ccc_Hulk_Adminhtml_Hulk_setController extends Mage_Adminhtml_Controller_Ac
             $this->_getSession()->addError($this->__('An error occurred while deleting this set.'));
             $this->_redirectReferer();
         }
+        $this->_redirect('*/*/');
     }
 
     protected function _setForcedFormKeyActions($actionNames)

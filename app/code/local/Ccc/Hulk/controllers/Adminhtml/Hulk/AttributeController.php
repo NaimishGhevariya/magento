@@ -74,7 +74,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
                 Mage::getSingleton('hulk/session')->addError(
                     Mage::helper('hulk')->__('This attribute no longer exists')
                 );
-                $this->_redirect('hulk/*');
+                $this->_redirect('*/*/');
                 return;
             }
 
@@ -83,7 +83,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
                 Mage::getSingleton('hulk/session')->addError(
                     Mage::helper('hulk')->__('This attribute cannot be edited.')
                 );
-                $this->_redirect('hulk/*');
+                $this->_redirect('*/*/');
                 return;
             }
         }
@@ -205,7 +205,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
                     $session->addError(
                         Mage::helper('hulk')->__('This Attribute no longer exists')
                     );
-                    $this->_redirect('hulk/*');
+                    $this->_redirect('*/*/');
                     return;
                 }
 
@@ -215,7 +215,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
                         Mage::helper('hulk')->__('This attribute cannot be updated.')
                     );
                     $session->setAttributeData($data);
-                    $this->_redirect('hulk/*');
+                    $this->_redirect('*/*/');
                     return;
                 }
 
@@ -278,7 +278,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
                 Mage::app()->cleanCache(array(Mage_Core_Model_Translate::CACHE_TAG));
                 $session->setAttributeData(false);
 
-                $this->_redirect('hulk/*', array());
+                $this->_redirect('*/*/', array());
 
                 return;
             } catch (Exception $e) {
@@ -288,7 +288,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
                 return;
             }
         }
-        $this->_redirect('hulk/*');
+        $this->_redirect('*/*/');
     }
 
     public function deleteAction()
@@ -302,7 +302,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
                 Mage::getSingleton('hulk/session')->addError(
                     Mage::helper('hulk')->__('This attribute cannot be deleted.')
                 );
-                $this->_redirect('hulk/*');
+                $this->_redirect('*/*/');
                 return;
             }
 
@@ -311,7 +311,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
                 Mage::getSingleton('hulk/session')->addSuccess(
                     Mage::helper('hulk')->__('The Hulk attribute has been deleted.')
                 );
-                $this->_redirect('hulk/*');
+                $this->_redirect('*/*/');
                 return;
             } catch (Exception $e) {
                 Mage::getSingleton('hulk/session')->addError($e->getMessage());
@@ -322,7 +322,7 @@ class Ccc_Hulk_Adminhtml_Hulk_AttributeController extends Mage_Adminhtml_Control
         Mage::getSingleton('hulk/session')->addError(
             Mage::helper('hulk')->__('Unable to find an attribute to delete.')
         );
-        $this->_redirect('hulk/*');
+        $this->_redirect('*/*/');
     }
 
     protected function _setForcedFormKeyActions($actionNames)
