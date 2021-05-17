@@ -9,9 +9,7 @@ class Ccc_Vendor_Block_Adminhtml_Vendorproduct_Attribute_Edit extends Mage_Admin
         $this->_blockGroup = 'vendor';
         $this->_controller = 'adminhtml_vendorproduct_attribute';
         parent::__construct();
-        echo '<pre>';
-        print_r('hello');
-        die();
+
         if ($this->getRequest()->getParam('popup')) {
             $this->_removeButton('back');
             $this->_addButton(

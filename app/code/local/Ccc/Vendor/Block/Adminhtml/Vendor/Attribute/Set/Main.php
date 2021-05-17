@@ -2,7 +2,7 @@
 
 class Ccc_Vendor_Block_Adminhtml_Vendor_Attribute_Set_Main extends Mage_Adminhtml_Block_Template
 {
-    
+
     protected function _construct()
     {
         $this->setTemplate('vendor/attribute/set/main.phtml');
@@ -13,86 +13,102 @@ class Ccc_Vendor_Block_Adminhtml_Vendor_Attribute_Set_Main extends Mage_Adminhtm
     {
         $setId = $this->_getSetId();
 
-        $this->setChild('group_tree',
+        $this->setChild(
+            'group_tree',
             $this->getLayout()->createBlock('vendor/adminhtml_vendor_attribute_set_main_tree_group')
         );
 
-        $this->setChild('edit_set_form',
+        $this->setChild(
+            'edit_set_form',
             $this->getLayout()->createBlock('vendor/adminhtml_vendor_attribute_set_main_formset')
         );
 
-        $this->setChild('delete_group_button',
+        $this->setChild(
+            'delete_group_button',
             $this->getLayout()->createBlock('adminhtml/widget_button')->setData(array(
                 'label'     => Mage::helper('vendor')->__('Delete Selected Group'),
                 'onclick'   => 'editSet.submit();',
                 'class'     => 'delete'
-        )));
+            ))
+        );
 
-        $this->setChild('add_group_button',
+        $this->setChild(
+            'add_group_button',
             $this->getLayout()->createBlock('adminhtml/widget_button')->setData(array(
                 'label'     => Mage::helper('vendor')->__('Add New'),
                 'onclick'   => 'editSet.addGroup();',
                 'class'     => 'add'
-        )));
+            ))
+        );
 
-        $this->setChild('back_button',
+        $this->setChild(
+            'back_button',
             $this->getLayout()->createBlock('adminhtml/widget_button')->setData(array(
                 'label'     => Mage::helper('vendor')->__('Back'),
-                'onclick'   => 'setLocation(\''.$this->getUrl('*/*/').'\')',
+                'onclick'   => 'setLocation(\'' . $this->getUrl('*/*/') . '\')',
                 'class'     => 'back'
-        )));
+            ))
+        );
 
-        $this->setChild('reset_button',
+        $this->setChild(
+            'reset_button',
             $this->getLayout()->createBlock('adminhtml/widget_button')->setData(array(
                 'label'     => Mage::helper('vendor')->__('Reset'),
                 'onclick'   => 'window.location.reload()'
-        )));
+            ))
+        );
 
-        $this->setChild('save_button',
+        $this->setChild(
+            'save_button',
             $this->getLayout()->createBlock('adminhtml/widget_button')->setData(array(
                 'label'     => Mage::helper('vendor')->__('Save Attribute Set'),
                 'onclick'   => 'editSet.save();',
                 'class'     => 'save'
-        )));
+            ))
+        );
 
         $deleteConfirmMessage = $this->jsQuoteEscape(Mage::helper('vendor')
             ->__('All products of this set will be deleted! Are you sure you want to delete this attribute set?'));
-        $deleteUrl = $this->getUrlSecure('*/*/delete', array('id' => $setId));
-        $this->setChild('delete_button',
+        $deleteUrl = $this->getUrl('*/*/delete', array('id' => $setId));
+        $this->setChild(
+            'delete_button',
             $this->getLayout()->createBlock('adminhtml/widget_button')->setData(array(
                 'label'     => Mage::helper('vendor')->__('Delete Attribute Set'),
                 'onclick'   => 'deleteConfirm(\'' . $deleteConfirmMessage . '\', \'' . $deleteUrl . '\')',
                 'class'     => 'delete'
-        )));
+            ))
+        );
 
-        $this->setChild('rename_button',
+        $this->setChild(
+            'rename_button',
             $this->getLayout()->createBlock('adminhtml/widget_button')->setData(array(
                 'label'     => Mage::helper('vendor')->__('New Set Name'),
                 'onclick'   => 'editSet.rename()'
-        )));
+            ))
+        );
 
         return parent::_prepareLayout();
     }
 
-    
+
     public function getGroupTreeHtml()
     {
         return $this->getChildHtml('group_tree');
     }
 
-    
+
     public function getSetFormHtml()
     {
         return $this->getChildHtml('edit_set_form');
     }
 
-    
+
     protected function _getHeader()
     {
         return Mage::helper('vendor')->__("Edit Attribute Set '%s'", $this->_getAttributeSet()->getAttributeSetName());
     }
 
-    
+
     public function getMoveUrl()
     {
         return $this->getUrl('*/vendor_set/save', array('id' => $this->_getSetId()));
@@ -163,7 +179,7 @@ class Ccc_Vendor_Block_Adminhtml_Vendor_Attribute_Set_Main extends Mage_Adminhtm
             ->load();
 
         $attributesIds = array('0');
-        
+
         foreach ($collection->getItems() as $item) {
             $attributesIds[] = $item->getAttributeId();
         }
@@ -216,7 +232,7 @@ class Ccc_Vendor_Block_Adminhtml_Vendor_Attribute_Set_Main extends Mage_Adminhtm
         return $this->getChildHtml('save_button');
     }
 
-    
+
     public function getDeleteButtonHtml()
     {
         if ($this->getIsCurrentSetDefault()) {
@@ -268,7 +284,7 @@ class Ccc_Vendor_Block_Adminhtml_Vendor_Attribute_Set_Main extends Mage_Adminhtm
         return $this->_getAttributeSet();
     }
 
-    
+
     protected function _toHtml()
     {
         return parent::_toHtml();

@@ -92,6 +92,11 @@ $table = $installer->getConnection()
         'nullable' => false,
         'default'  => '0',
     ), 'Is Used For Promo Rules')
+    ->addColumn('sort_order', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
+        'unsigned' => true,
+        'nullable' => false,
+        'default'  => '0',
+    ), 'Sort Order')
     ->addIndex(
         $installer->getIdxName('vendor/eav_productAttribute', array('used_for_sort_by')),
         array('used_for_sort_by')

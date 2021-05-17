@@ -13,9 +13,6 @@ class Ccc_Vendor_Block_Adminhtml_Vendorproduct_Grid extends Mage_Adminhtml_Block
         $this->setSaveParametersInSession(true);
         $this->setUseAjax(true);
         $this->setVarNameFilter('vendor_filter');
-        echo '<pre>';
-        print_r('Ccc_Vendor_Block_Adminhtml_Vendorproduct_Grid');
-        die();
     }
 
     protected function _getStore()

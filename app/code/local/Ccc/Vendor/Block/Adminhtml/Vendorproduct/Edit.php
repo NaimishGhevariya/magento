@@ -4,7 +4,7 @@ class Ccc_Vendor_Block_Adminhtml_Vendorproduct_Edit extends Mage_Adminhtml_Block
 {
     public function __construct()
     {
-        $this->_blockGroup = 'vendor';
+        $this->_blockGroup = 'vendor_product';
         $this->_controller = 'adminhtml_vendorproduct';
         parent::__construct();
     }

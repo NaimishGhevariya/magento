@@ -90,7 +90,6 @@ class Ccc_Vendor_Adminhtml_Vendorproduct_AttributeController extends Mage_Adminh
         Mage::register('entity_attribute', $model);
 
         $this->_initAction();
-
         $this->_title($id ? $model->getName() : $this->__('New Attribute'));
 
         $item = $id ? Mage::helper('vendor')->__('Edit Vendor Product Attribute')

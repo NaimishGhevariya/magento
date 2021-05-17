@@ -63,7 +63,7 @@
 						<table>vendor_product_char</table>
 					</vendor_product_char>
 					<eav_productAttribute>
-						<table>vendor_product_eav_attribute</table>
+						<table>vendor_eav_productAttribute</table>
 					</eav_productAttribute>
 
 				</entities>

@@ -26,9 +26,9 @@ $setup = new Mage_Eav_Model_Entity_Setup('core_setup');
 $setup->addAttribute(Ccc_Vendor_Model_Resource_Vendor::ENTITY, 'password_hash', array(
     'group'                      => 'General',
     'input'                      => 'text',
-    'type'                       => 'int',
+    'type'                       => 'varchar',
     'label'                      => 'password_hash',
-    'frontend_class'             => 'validate-digits',
+    'frontend_class'             => 'validate-password',
     'backend'                    => '',
     'visible'                    => 1,
     'required'                   => 0,

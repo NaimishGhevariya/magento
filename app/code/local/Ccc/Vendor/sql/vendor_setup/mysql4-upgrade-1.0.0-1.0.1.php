@@ -9,8 +9,7 @@ $table = $installer->getConnection()
         'nullable' => false,
         'primary'  => true,
     ), 'Attribute ID')
-    ->addColumn('frontend_input_renderer', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
-    ), 'Frontend Input Renderer')
+    ->addColumn('frontend_input_renderer', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(), 'Frontend Input Renderer')
     ->addColumn('is_global', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
         'unsigned' => true,
         'nullable' => false,
@@ -93,13 +92,22 @@ $table = $installer->getConnection()
         'nullable' => false,
         'default'  => '0',
     ), 'Is Used For Promo Rules')
-    ->addIndex($installer->getIdxName('vendor/eav_attribute', array('used_for_sort_by')),
-        array('used_for_sort_by'))
-    ->addIndex($installer->getIdxName('vendor/eav_attribute', array('used_in_product_listing')),
-        array('used_in_product_listing'))
-    ->addForeignKey($installer->getFkName('vendor/eav_attribute', 'attribute_id', 'eav/attribute', 'attribute_id'),
-        'attribute_id', $installer->getTable('eav/attribute'), 'attribute_id',
-        Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
+    ->addIndex(
+        $installer->getIdxName('vendor/eav_attribute', array('used_for_sort_by')),
+        array('used_for_sort_by')
+    )
+    ->addIndex(
+        $installer->getIdxName('vendor/eav_attribute', array('used_in_product_listing')),
+        array('used_in_product_listing')
+    )
+    ->addForeignKey(
+        $installer->getFkName('vendor/eav_attribute', 'attribute_id', 'eav/attribute', 'attribute_id'),
+        'attribute_id',
+        $installer->getTable('eav/attribute'),
+        'attribute_id',
+        Varien_Db_Ddl_Table::ACTION_CASCADE,
+        Varien_Db_Ddl_Table::ACTION_CASCADE
+    )
     ->setComment('vendor EAV Attribute Table');
 
 $query = "ALTER TABLE `vendor_varchar` ADD UNIQUE( `attribute_id`, `store_id`, `entity_id`)";
@@ -168,7 +176,7 @@ $setup->addAttribute(Ccc_Vendor_Model_Resource_Vendor::ENTITY, 'email', array(
 $setup->addAttribute(Ccc_Vendor_Model_Resource_Vendor::ENTITY, 'phoneNo', array(
     'group'                      => 'General',
     'input'                      => 'text',
-    'type'                       => 'int',
+    'type'                       => 'varchar',
     'label'                      => 'phoneNo',
     'frontend_class'             => 'validate-digits',
     'backend'                    => '',

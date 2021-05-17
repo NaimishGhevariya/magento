@@ -6,7 +6,7 @@ $this->addEntityType(Ccc_Vendor_Model_Resource_Product::ENTITY, [
     'attribute_model'             => 'vendor/productAttribute',
     'table'                       => 'vendor/product',
     'increment_per_store'         => '0',
-    'additional_attribute_table'  => 'vendor/product_eav_Attribute',
+    'additional_attribute_table'  => 'vendor/eav_productAttribute',
     'entity_attribute_collection' => 'vendor/product_attribute_collection',
 ]);
 

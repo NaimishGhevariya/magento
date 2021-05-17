@@ -153,35 +153,33 @@ class Ccc_Vendor_AccountController extends Mage_Core_Controller_Front_Action
 
         if ($this->getRequest()->isPost()) {
             $login = $this->getRequest()->getPost('login');
-            // if (!empty($login['username']) && !empty($login['password'])) {
-            // try {
-            $session->login($login['username'], $login['password']);
-            $this->_welcomeVendor($session->getVendor(), true);
-
-            //         if ($session->getVendor()->getIsJustConfirmed()) {
-            //         }
-            //     } catch (Mage_Core_Exception $e) {
-            //         switch ($e->getCode()) {
-            //             case Ccc_Vendor_Model_Vendor::EXCEPTION_EMAIL_NOT_CONFIRMED:
-            //                 $value = $this->_getHelper('vendor')->getEmailConfirmationUrl($login['username']);
-            //                 $message = $this->_getHelper('vendor')->__('This account is not confirmed. <a href="%s">Click here</a> to resend confirmation email.', $value);
-            //                 break;
-            //             case Ccc_Vendor_Model_Vendor::EXCEPTION_INVALID_EMAIL_OR_PASSWORD:
-            //                 $message = $e->getMessage();
-            //                 break;
-            //             default:
-            //                 $message = $e->getMessage();
-            //         }
-            //         $session->addError($message);
-            //         $session->setUsername($login['username']);
-            //     } catch (Exception $e) {
-            //         // Mage::logException($e); // PA DSS violation: this exception log can disclose vendor password
-            //     }
-            // } else {
-            //     $session->addError($this->__('Login and password are required.'));
-            // }
+            if (!empty($login['username']) && !empty($login['password'])) {
+                try {
+                    $session->login($login['username'], $login['password']);
+                    if ($session->getVendor()->getIsJustConfirmed()) {
+                        $this->_welcomeVendor($session->getVendor(), true);
+                    }
+                } catch (Mage_Core_Exception $e) {
+                    switch ($e->getCode()) {
+                        case Ccc_Vendor_Model_Vendor::EXCEPTION_EMAIL_NOT_CONFIRMED:
+                            $value = $this->_getHelper('vendor')->getEmailConfirmationUrl($login['username']);
+                            $message = $this->_getHelper('vendor')->__('This account is not confirmed. <a href="%s">Click here</a> to resend confirmation email.', $value);
+                            break;
+                        case Ccc_Vendor_Model_Vendor::EXCEPTION_INVALID_EMAIL_OR_PASSWORD:
+                            $message = $e->getMessage();
+                            break;
+                        default:
+                            $message = $e->getMessage();
+                    }
+                    $session->addError("invalid credentials");
+                    $session->setUsername($login['username']);
+                } catch (Exception $e) {
+                    // Mage::logException($e); // PA DSS violation: this exception log can disclose vendor password
+                }
+            } else {
+                $session->addError($this->__('Login and password are required.'));
+            }
         }
-
         $this->_loginPostRedirect();
     }
 
